@@ -20,3 +20,9 @@ Docker is a platform that allows you to package, run, and manage applications in
        - Store and distributed images
 
 #### Docker vs Virtual Machine
+| Docker | VM     |
+| :-------- | :------- | 
+|lightweight| Heavy
+|Share Host OS| Has full OS
+|Fast Startup| Slow Start
+|Use fewer Resouces| Use more Resouces 
