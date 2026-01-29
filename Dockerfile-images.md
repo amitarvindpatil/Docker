@@ -49,3 +49,7 @@ Dockerfile is a script containing instructions like (FROM,COPY,RUN) that docker 
 
       COPY . /opt/source-code    <-- COPY source code
       ENTRYPOINT FLASK_APP=/opt/source-code/app.py   <-- Specify Entrypoint
+
+#### Layerd Architecture
+      <img width="716" height="377" alt="image" src="https://github.com/user-attachments/assets/2cfe94ff-05f8-450c-abc2-74e001397cd3" />
+
