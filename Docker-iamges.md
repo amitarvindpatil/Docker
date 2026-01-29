@@ -1,23 +1,32 @@
 
-#### What is Docker?   
+#### Docker Images
+Docker image is Read-Only template that contains everything need to run an application inside container
 
-Docker is a platform that allows you to package, run, and manage applications inside lightweight, portable containers.
+It includes
+   - application code
+   - Dependancies
+   - Runtime (python/java/node etc.)
+   - Libraries 
+   - configurations
+   - OS level files
 
-#### Why Docker ?
-- Consistency
-- lightweight - 
-- Fast - Start in milliSeconds
-- portable - Run on Linux,Windows,macOS,Cloud
-- Scalable
+### How to pull Images/ download image
+| command | example     |
+| :-------- | :------- | 
+|`docker pull <image-name>:<tag>`| `docker pull nginx:latest`
+|`docker run <image-name>`| `docker run nginx`
 
-#### Docker Components?
-    1. Docker Engine 
-       - Run and Manage containers
-    2. Docker Images
-       - Blueprints for containers 
-    3. Docker containers
-       - Running instance of images
-    4. Docker Hub/Registry 
-       - Store and distributed images
+### push an Image 
 
-#### Docker vs Virtual Machine
+| command | example     |
+| :-------- | :------- | 
+|`docker push <image-name>:<tag>`|`docker push username/myapp:v1`
+
+before push login first
+command : `docker login`
+
+### remove docker image
+| command | example     |
+| :-------- | :------- | 
+|`docker rm <image-name>:<tag>`|`docker rmi myapp:v1`
+
