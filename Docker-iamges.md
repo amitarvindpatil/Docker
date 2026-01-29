@@ -30,3 +30,19 @@ command : `docker login`
 | :-------- | :------- | 
 |`docker rm <image-name>:<tag>`|`docker rmi myapp:v1`
 
+#### Full Workflow Example (Pull → Build → Tag → Push)
+
+      Step 1: Pull base image
+            - docker pull node:18
+
+      Step 2: Build your app image
+            - docker build -t myapp:v1
+
+      Step 3: Tag it for docker hub
+            - docker tag myapp:v1 amitpatil/myapp:v1
+
+      Step 4: Login
+            - docker login
+
+      Step 5: push image
+            - docker push amitpatil/myapp:v1
