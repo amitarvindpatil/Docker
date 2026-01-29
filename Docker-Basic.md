@@ -26,3 +26,18 @@ Docker is a platform that allows you to package, run, and manage applications in
 |Share Host OS| Has full OS
 |Fast Startup| Slow Start
 |Use fewer Resouces| Use more Resouces 
+
+
+#### Docker Architecture
+Docker follow client Server Architecture.
+
+It consistent into 3 main components
+
+ 1. Docker client
+ 2. Docker Demon(dockerd)
+ 3. Docker Registry
+
+HD Diagram will update soon
+
+
+
