@@ -37,7 +37,8 @@ It consistent into 3 main components
  2. Docker Demon(dockerd)
  3. Docker Registry
 
-HD Diagram will update soon
+HD Diagram of Architecture
+https://github.com/amitarvindpatil/Docker/blob/main/docker-architecture.png
 
 
 
