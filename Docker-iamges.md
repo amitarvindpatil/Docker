@@ -10,6 +10,17 @@ It includes
    - configurations
    - OS level files
 
+####  Difference between docker images and Container
+
+| Docker Images | Docker Container     |
+| :-------- | :------- | 
+|Blueprint| Running instance
+|ReadOnly| Read/Write Layer
+|Stored in Registry| Run on Docker Engine
+|Can create Multi-Container| One isolated runtime
+
+
+
 ### How to pull Images/ download image
 | command | example     |
 | :-------- | :------- | 
