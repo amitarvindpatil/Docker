@@ -24,3 +24,17 @@ Dockerfile is a script containing instructions like (FROM,COPY,RUN) that docker 
 |STOPSIGNAL|docker which signal to send on docker stop | `STOPSIGNAL SIGTERM`
 |ONBUILD|trigger Instruction when another build uses this image as FROM|`ONBUILD COPY . /app` | use for base images
 
+
+####  MULTI-STAGE BUILD (multiple FROM instructions)
+- Used to reduce image size
+- Huge size reduction → Best practice.
+
+      FROM node:18 AS builder
+      WORKDIR /app
+      COPY . .
+      RUN npm install && npm run build
+      
+      FROM node:18-slim
+      COPY --from=builder /app/dist dist/
+      CMD ["node", "dist/server.js"]
+
