@@ -81,12 +81,13 @@ Tools :
    - Trivy
    - Clair
 #### What is scratch images
-smallest possible image__ an empty base used for static binaries
+   smallest possible image__ an empty base used for static binaries
 
       FROM scratch 
       COPY app /app
       CMD ["/app"]
 
 #### Difference Docker Save and Docker Export
-Docker Save : Save the image
-Docker export : Save container filesystem (no layer/history)
+   Docker Save : Save the image
+
+   Docker export : Save container filesystem (no layer/history)
