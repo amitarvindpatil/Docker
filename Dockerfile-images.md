@@ -45,7 +45,7 @@ Dockerfile is a script containing instructions like (FROM,COPY,RUN) that docker 
       RUN apt-get update      <-- install all dependancies
       RUN apt-get install python  
       RUN pip install flask
-      RUN pip install flast-mysql
+      RUN pip install flask-mysql
 
       COPY . /opt/source-code    <-- COPY source code
       ENTRYPOINT FLASK_APP=/opt/source-code/app.py   <-- Specify Entrypoint
