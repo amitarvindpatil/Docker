@@ -51,6 +51,6 @@ Dockerfile is a script containing instructions like (FROM,COPY,RUN) that docker 
       ENTRYPOINT FLASK_APP=/opt/source-code/app.py   <-- Specify Entrypoint
 
 #### Layerd Architecture
-
+https://github.com/amitarvindpatil/Docker/blob/main/layered-architecture-dockerfile.png
 
 
