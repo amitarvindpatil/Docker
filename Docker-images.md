@@ -41,6 +41,16 @@ command : `docker login`
 | :-------- | :------- | 
 |`docker rm <image-name>:<tag>`|`docker rmi myapp:v1`
 
+### Check history of image
+| command | example     |
+| :-------- | :------- | 
+|`docker history image_name`|`docker history nginx`
+
+### Inspect Image
+| command | example     |
+| :-------- | :------- | 
+|`docker inspect image_name`|`docker inspect nginx` | showes env,vars,layers
+
 #### Full Workflow Example (Pull → Build → Tag → Push)
 
       Step 1: Pull base image
@@ -57,3 +67,26 @@ command : `docker login`
 
       Step 5: push image
             - docker push amitpatil/myapp:v1
+
+#### How do you reduce Docker Image size?  ***
+- Use #### MultiStage Builds
+- Use small base images (alpine, slim)
+- Clean Cache (rm -rf /var/lib/apt/list/*)
+- use .dockerignore
+- remove build tool after installation
+
+#### How to scan an image for vulnerabilities?
+Tools :
+   - docker scan
+   - Trivy
+   - Clair
+#### What is scratch images
+smallest possible image__ an empty base used for static binaries
+
+      FROM scratch 
+      COPY app /app
+      CMD ["/app"]
+
+#### Difference Docker Save and Docker Export
+Docker Save : Save the image
+Docker export : Save container filesystem (no layer/history)
