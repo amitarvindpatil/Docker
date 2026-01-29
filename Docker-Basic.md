@@ -27,6 +27,8 @@ Docker is a platform that allows you to package, run, and manage applications in
 |Fast Startup| Slow Start
 |Use fewer Resouces| Use more Resouces 
 
+#### Docker Engine
+Docker engine is core part of Docker that runs and manage containers
 
 #### Docker Architecture
 Docker follow client Server Architecture.
