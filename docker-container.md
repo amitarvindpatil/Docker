@@ -12,7 +12,7 @@ docker container is a lightweight, standalone, and executable package that conta
 |`docker rm <container_id_name>`| remove or delete container
 |`docker rm -f <container_id_name>`| remove forcefilly container
 |`docker container prune`| remove all stop container
-
+|`docker exec -it <container_id> bash`| accessing running container
 #### default path of docker cotnainer logs 
 
 `/var/lib/docker/containers/<container-id>/<container-id>-json.log`
@@ -60,5 +60,18 @@ Docker allows restriciting container resouces using flags during docker run
 Limiting Memory: `docker run -m 512 --memory-swap=512m ubuntu`
 
 Limiting CPU (Limit CPU usage to 50% of a single CPU:) : `docker run --cpus="0.5" ubuntu`
+
+
+### Interview Questions about docker container
+ 1. How do you copy files from a running container?
+ `docker cp <container>:/path/file`
+ 2. How does Docker achieve isolation without a hypervisor?
+    ` - Linux Namespace(isolation)
+      - cgroup (resouce limit)
+      - UnionFS (layered FileSystem)
+      - Container + runc (runtime)
+   `
+ 4. 
+ 
 
 combine CPU & Memory : `docker run -d -m 512m --cpus="1.0" nginx`
