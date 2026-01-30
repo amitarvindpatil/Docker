@@ -61,17 +61,17 @@ Limiting Memory: `docker run -m 512 --memory-swap=512m ubuntu`
 
 Limiting CPU (Limit CPU usage to 50% of a single CPU:) : `docker run --cpus="0.5" ubuntu`
 
+combine CPU & Memory : `docker run -d -m 512m --cpus="1.0" nginx`
 
 ### Interview Questions about docker container
  1. How do you copy files from a running container?
  `docker cp <container>:/path/file`
  2. How does Docker achieve isolation without a hypervisor?
-    ` - Linux Namespace(isolation)
+      - Linux Namespace(isolation)
       - cgroup (resouce limit)
       - UnionFS (layered FileSystem)
       - Container + runc (runtime)
-   `
- 4. 
+   
+ 
  
 
-combine CPU & Memory : `docker run -d -m 512m --cpus="1.0" nginx`
