@@ -6,6 +6,7 @@ docker container is a lightweight, standalone, and executable package that conta
 #### Docker containers essentials commands 
 | command | Description     |
 | :-------- | :------- | 
+|`docker run <image_id>`| download image and deploy on container
 |`docker start <container_id>`| Start a container 
 |`docker stop <container_id>`| stop running container
 |`docker restart <container_id>`| restart container
@@ -13,6 +14,9 @@ docker container is a lightweight, standalone, and executable package that conta
 |`docker rm -f <container_id_name>`| remove forcefilly container
 |`docker container prune`| remove all stop container
 |`docker exec -it <container_id> bash`| accessing running container
+|`docker run -e APP_COLOR=blue <container_id_or_name>`| set enviroment variable
+
+
 #### default path of docker cotnainer logs 
 
 `/var/lib/docker/containers/<container-id>/<container-id>-json.log`
