@@ -13,6 +13,11 @@ docker container is a lightweight, standalone, and executable package that conta
 |`docker rm -f <container_id_name>`| remove forcefilly container
 |`docker container prune`| remove all stop container
 
+#### default path of docker cotnainer logs 
+
+`/var/lib/docker/containers/<container-id>/<container-id>-json.log`
+
+
 ### Detached  vs Interactive Mode
 
 #### Detached mode (-d) -
