@@ -52,3 +52,13 @@ docker-compose-example.yml :- https://github.com/amitarvindpatil/Docker/blob/mai
 Example will done after lab
 
 
+### Best practices 
+
+    1. Use service names for internal calls (no hardcoded IPs).
+    2. Use expose for internal services; publish only the edge (gateway/proxy).
+    3. Add healthchecks and use depends_on.condition: service_healthy.
+    4. Persist data with named volumes (e.g., db_data).
+    5. Separate networks for edge vs core services.
+    6. Keep scalable services stateless.
+    7. Never store passwords in the repo; use .env/secrets or a vault.
+    8.  For local dev, bind mount code; for prod, build images.
