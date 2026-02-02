@@ -13,6 +13,13 @@ Docker hub is a default public Registry used by Docker
     Secure and access control
     Fast image pull in CI/CD 
     version control for internal microservices
+image:  
+        
+        docker.io/nginx/nginx
+        ===============================
+        docker.io:  registry
+        nginx:  user
+        nginx: image
 
 ### Run your own private registry:
 `docker run -d -p 5000:5000 --name registry registry:2`
