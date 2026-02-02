@@ -1,0 +1,60 @@
+### What is Docker Compose?
+
+    name: myapp                      # Optional: project name; otherwise directory name is used
+
+    services:
+    web:                           # Service name (container group)
+        build: ./web                 # or image: nginx:alpine
+        ports:
+        - "8080:80"                # host:container
+        environment:
+        - API_URL=http://api:5000  # internal service DNS name
+        depends_on:
+        api:
+            condition: service_healthy
+        networks:
+        - appnet
+        volumes:
+        - web_static:/usr/share/nginx/html:ro
+        restart: unless-stopped
+        healthcheck:
+        test: ["CMD", "wget", "-qO-", "http://localhost/health"] 
+        interval: 10s
+        timeout: 3s
+        retries: 5
+
+    api:
+        build: ./api
+        expose:
+        - "5000"                   # expose to other services only (no host publish)
+        environment:
+        - DB_HOST=db
+        depends_on:
+        db:
+            condition: service_healthy
+        networks:
+        - appnet
+
+    db:
+        image: postgres:16
+        environment:
+        POSTGRES_USER: myuser
+        POSTGRES_PASSWORD: mypass
+        POSTGRES_DB: mydb
+        volumes:
+        - db_data:/var/lib/postgresql/data
+        networks:
+        - appnet
+        healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U myuser"]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+
+    networks:
+    appnet:
+        driver: bridge               # default for Compose; gives per-project DNS & isolation
+
+    volumes:
+    db_data:                       # named volume (managed by Docker)
+    web_static:
