@@ -1,1 +1,25 @@
+### What is Docker Compose?
+
+Docker Compose is use to define,run and manage multi-container application using a single YAML file (Docker-Compose.yml)
+
+Declare the service (api,web,db etc.), how they connect (networks), and where the data store(volumes), then run it into single command.
+
+`docker compose up -d`
+### docker compose run --link commands
+`docker run -d --name=redis redis`
+
+`docker run -d --name=db`
+
+`docker run -d --name=db`
+
+`docker run -d --name=vote -p 5000:80 --link redis:redis`
+
+`docker run -d --name=result -p 5001:80 --link db:db`
+
+`docker run -d --name=worker --link db:db --link redis=redis`
+
+### docker-compose.yml - Strcture and key Section
+
+Example will done after lab
+
 
