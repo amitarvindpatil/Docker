@@ -51,6 +51,11 @@ command : `docker login`
 | :-------- | :------- | 
 |`docker inspect image_name`|`docker inspect nginx` | showes env,vars,layers
 
+### clean all Image
+| command | example     |
+| :-------- | :------- | 
+|`docker system prune -af` | Remove all images
+
 #### Full Workflow Example (Pull → Build → Tag → Push)
 
       Step 1: Pull base image
@@ -78,7 +83,7 @@ command : `docker login`
 #### How to scan an image for vulnerabilities?
 Tools :
    - docker scan
-   - Trivy
+   - Trivy   `trivy image nginx:latest `
    - Clair
 #### What is scratch images
    smallest possible image__ an empty base used for static binaries
